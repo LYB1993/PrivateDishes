@@ -1,0 +1,109 @@
+.container{
+  background-color: rgba(0, 0, 0, 0.027);
+}
+.page-head {
+  height: 15%;
+}
+
+.page-body {
+  height: 70%;
+}
+
+.item {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  height: 100px;
+  border: solid 0.5rem rgba(255, 255, 255, 0.048);
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.375rem
+}
+
+.item .item-img {
+  width: 80px;
+  overflow: clip;
+  max-width: 100%;
+  height: auto;
+}
+
+.item .item-body {
+  padding-left: 10px;
+  flex: 0 0 auto;
+  width: 75%;
+}
+
+.item-title::before {
+  content: "热卖";
+  background-color: rgba(255, 0, 0, 0.596);
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  padding: 1px 4px 1px 4px;
+  margin-right: 6px;
+  border-radius: 0.375rem
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-desc {
+  color: rgba(0, 0, 0, 0.308);
+  font-size: 12px;
+  font-weight: 500;
+  padding-top: 3px;
+  height: 60%;
+}
+
+.item-desc .score {
+  font-weight: bold;
+  color: rgb(235, 143, 67);
+  font-size: 15px;
+}
+
+.item-desc text {
+  margin-right: 5px;
+}
+
+
+.item-desc .time {
+  margin-right: 5px;
+  padding-top: 3px;
+  float: right;
+}
+
+.item-desc .delivery{
+  border: solid rgb(180, 180, 180) 1px;
+  border-radius: 0.375rem;
+  padding: 0px 5px 0px 5px;
+  float: right;
+}
+
+
+
+.item-histor{
+  padding-top: 2px;
+}
+
+.item-histor text{
+  background-color: rgba(255, 230, 45, 0.521);
+  border-radius: 0.375rem;
+  padding: 0px 5px 2px 5px;
+  color: rgba(235, 143, 67, 0.877);
+  font-weight: bold;
+}
+
+.item-foot text {
+  border: solid red 1px;
+  font-size: 12px;
+  color: red;
+  border-radius: 0.375rem;
+  padding: 0px 5px 0px 5px;
+}

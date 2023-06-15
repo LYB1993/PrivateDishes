@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "left-head": "../../component/left-head/index",
+    "grid-tile": "../../component/grid-tile/index"
+  }
+}

@@ -1,0 +1,9 @@
+<view class="body">
+  <view class="image">
+    <image src="{{src}}" mode="aspectFit"></image>
+  </view>
+  <view class="title">
+    <text>{{title}}</text>
+  </view>
+
+</view>

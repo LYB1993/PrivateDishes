@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/me/me",
+    "pages/shop/index",
+    "pages/dram/dram"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "./iamge/home.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "selectedIconPath": "./iamge/order.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "selectedIconPath": "./iamge/me.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

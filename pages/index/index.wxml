@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<left-head></left-head>
+<view class="container">
+  <view class="page-head">
+    <grid-view cross-axis-count="4" cross-axis-gap="8" main-axis-gap="4">
+      <grid-tile wx:for="{{menus}}" wx:key="id" index="{{item.id}}" width="140" title="{{item.title}}" src="{{staticServer + item.icon}}"></grid-tile>
+    </grid-view>
+  </view>
+  <view class="page-body">
+    <block wx:for="{{shops}}" wx:key="id">
+      <view id="{{item.id}}" class="item" data-id="{{item.id}}" bindtap="jumpShop">
+        <image class="item-img" src="{{staticServer + item.icon}}" mode="aspectFit"></image>
+        <view class="item-body">
+          <view>
+            <text class="item-title">{{item.name}}</text>
+          </view>
+          <view class="item-desc">
+            <view>
+              <text class="score">{{item.description.score}}分</text>
+              <text>销量{{item.description.sales}}+</text>
+              <text>人均￥{{item.description.averagePrice}}</text>
+              <text class="delivery">{{item.description.delivery}}</text>
+            </view>
+            <view>
+              <text>起送￥{{item.description.lastPrice}}</text>
+              <text>配送 约￥{{item.description.deliveryPrice}}</text>
+              <text class="time">{{item.description.timeAndDistance}}</text>
+            </view>
+            <view class="item-histor">
+              <text>近期下单{{item.description.recent}}</text>
+            </view>
+          </view>
+          <view class="item-foot">
+            <view>
+              <text>{{item.description.preferential}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

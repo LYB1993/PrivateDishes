@@ -1,0 +1,119 @@
+<!--pages/dram/dram.wxml-->
+<!--pages/shop/index.wxml-->
+<view class="container">
+  <view class="shop-head">
+    <view class="back">
+      <image mode="scaleToFill" wx:if="{{shops.icon.length >0}}" src="{{staticServer + shops.icon}}"></image>
+    </view>
+    <!-- <view> -->
+    <view class="info">
+      <view class="details">
+        <view class="details-left">
+          <image src="{{staticServer + shops.icon}}" wx:if="{{shops.icon.length >0}}" mode="aspectFit"></image>
+        </view>
+        <view class="details-right">
+          <view class="up">
+            <view class="title">
+              <text>{{shops.name}}</text>
+            </view>
+            <view class="link">
+            </view>
+            <view class="favorites">
+              <text>收藏</text>
+            </view>
+          </view>
+          <view class="down">
+            <view class="down-item">
+              <image src="../../iamge/favorites.png"></image>
+              <text>4.7</text>
+            </view>
+            <view class="down-item">
+              <image src="../../iamge/time.png"></image>
+              <text>配送约30分钟</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="notice">
+        <text>{{shops.description.notice}}</text>
+      </view>
+      <view class="preferential">
+        <text wx:if="{{shops.description.preferential.length === 0}}" style="background-color: #ffffff;"></text>
+        <text class="text" wx:for="{{shops.description.preferential}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+    <!-- </view> -->
+  </view>
+  <view class="shop-body">
+    <scroll-view class="shop-tab" scroll-x scroll-with-animation>
+      <view class="tab scroll_item{{index}} {{nav.active === index? 'active':''}}" data-index="{{index}}" bindtap="select" wx:for="{{nav.list}}" wx:key="index">
+        {{item.name}}</view>
+      <view class="sub" style="width: {{nav.width}}px; left: {{nav.offsetLeft}}px;"></view>
+    </scroll-view>
+    <view class="content">
+      <view class="content-left">
+        <scroll-view scroll-y scroll-with-animation style="height:100%;">
+          <view class="item {{shopMenu.active == index? 'active':''}}" data-index="{{index}}" wx:for="{{shopMenu.list}}" bindtap="selectMenu" wx:key="index">
+            <text>{{item.name}}</text>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="content-right">
+        <scroll-view scroll-y scroll-with-animation style="width: 100%;height: 100%;">
+          <view class="group-name">
+            <text>{{shopMenu.list[shopMenu.active].name}}</text>
+          </view>
+          <view class="item" data-index="{{index}}" wx:for="{{goods}}" wx:key="index" style="width: 100%;">
+            <view class="img">
+              <image mode="aspectFit" src="{{staticServer + item.icon}}"></image>
+            </view>
+            <view class="describes">
+              <view class="title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="comments">
+                <text wx:if="{{item.comments.length === 0}}" style="background-color: #ffffff;"></text>
+                <text class="text" wx:for="{{item.comments}}" wx:key="index">{{item}}</text>
+              </view>
+              <view class="sales">
+                <text>月销 {{item.sales}}+</text>
+              </view>
+              <view class="preferential">
+                <text>{{item.preferential}}</text>
+              </view>
+              <view class="buy">
+                <view class="price">
+                  <text class="discount">￥{{item.discount}}</text>
+                  <text class="cost">￥{{item.cost}}</text>
+                </view>
+                <view class="btn minus" data-item="{{item}}" bindtap="sub" hidden="{{item.count == 0}}">
+                  <text>-</text>
+                </view>
+                <view class="count" hidden="{{item.count == 0}}">
+                  <text>{{item.count}}</text>
+                </view>
+                <view class="btn add" data-item="{{item}}" bindtap="add">
+                  <text>+</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <view class="shop-foot">
+    <view class="car">
+      <view class="pople">
+        <image src="../../iamge/peisong.png" mode="aspectFit"></image>
+      </view>
+      <view class="count">
+        <text>预估配送费</text>
+      </view>
+      <view>
+        <view class="end"></view>
+        <view class="end2"></view>
+      </view>
+    </view>
+  </view>
+</view>
